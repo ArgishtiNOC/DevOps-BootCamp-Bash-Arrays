@@ -1,10 +1,20 @@
 #!/bin/bash
 
 # Place your code here
-folderNumber="$1"
+num=$1
+y=1
 
-for((i=1; i<=$folderNumber; i++)); do
-  mkdir -p "folder"_$i
- done
+for i in {a..z}; do
+  if [[ $y -le $num ]]
+  then
+    mkdir ./folder_$i
+    ((y++))
+ fi
+done
 
-echo "$folderNumber" folder created: && ls | grep folder
+if [[ $num -gt 1 ]]
+then
+  echo "$num folders created: $(ls -d folder_* | grep -v / | xargs echo | sed 's/ /, /g')";
+else
+  echo "$num folder created: $(ls -d folder_* | grep -v / | xargs echo | sed 's/ /, /g')"
+fi
