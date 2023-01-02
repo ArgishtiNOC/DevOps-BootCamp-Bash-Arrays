@@ -12,4 +12,4 @@ for i in {a..z}; do
  fi
 done
 
-echo "$x folders created: $(ls -d folder_* | grep -v / | tr '\n' ',')";
+echo "$x folders created: $(ls -d folder_* | grep -v / | xargs echo | sed 's/ /, /g')";
