@@ -1,6 +1,4 @@
 #!/bin/bash
-
-# Place your code here
 x=$1
 y=1
 for i in {a..z}; do
